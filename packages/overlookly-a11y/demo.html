@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>overlookly-a11y demo</title>
+<style>
+  body { font-family: -apple-system, sans-serif; max-width: 600px; margin: 60px auto; color: #1a1a18; }
+  .low-contrast { background: #fff; color: #999; border: none; padding: 10px 16px; border-radius: 6px; font-size: 15px; }
+  input { display: block; margin: 12px 0; padding: 8px; }
+  img { display: block; margin: 12px 0; border: 1px solid #eee; }
+</style>
+</head>
+<body>
+  <h1>overlookly-a11y demo</h1>
+  <p>Activate the toolbar (bottom right), then click each broken element below.</p>
+  <h3>Low-contrast button</h3>
+  <button class="low-contrast">Get started</button>
+  <h3>Missing alt text</h3>
+  <img src="https://via.placeholder.com/120" width="120" height="80" />
+  <h3>Unlabeled input</h3>
+  <input type="email" placeholder="you@example.com" />
+  <script type="module">
+    import { overlookly } from './src/index.js';
+    overlookly();
+  </script>
+</body>
+</html>

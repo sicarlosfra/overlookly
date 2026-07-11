@@ -1,0 +1,22 @@
+{
+  "name": "overlookly-a11y",
+  "version": "0.1.0",
+  "description": "Accessibility feedback, structured for agents. Click an element, get the issue, the fix, and the selector.",
+  "main": "src/index.js",
+  "type": "module",
+  "files": [
+    "src"
+  ],
+  "keywords": [
+    "accessibility",
+    "a11y",
+    "wcag",
+    "devtools",
+    "agents",
+    "mcp"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "jsdom": "^29.1.1"
+  }
+}
