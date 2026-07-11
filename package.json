@@ -1,0 +1,14 @@
+{
+  "name": "overlookly",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Accessibility feedback, structured for agents. Monorepo for overlookly-a11y, overlookly-mcp, and the site.",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
