@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const TOP_LINKS = [
   { href: "/", label: "Overview" },
@@ -20,9 +22,34 @@ const RESOURCES_LINKS = [
   { href: "/faq", label: "FAQ" },
 ];
 
-const linkClass =
-  "text-[#2480ED] no-underline hover:text-[#E5484D] transition-colors text-[14px]";
-const groupLabelClass = "text-[12px] text-[#a8a69d] mt-5 mb-1";
+const groupLabelClass = "text-[10px] text-[#121212]/30 tracking-[-0.08px] leading-[140%] mt-4 mb-1";
+
+function NavLink({
+  href,
+  label,
+  onNavigate,
+}: {
+  href: string;
+  label: string;
+  onNavigate?: () => void;
+}) {
+  const pathname = usePathname();
+  const isActive = pathname === href;
+
+  return (
+    <Link
+      href={href}
+      onClick={onNavigate}
+      className={
+        isActive
+          ? "text-[12px] text-[#121212] tracking-[-0.08px] leading-[140%] no-underline"
+          : "text-[12px] text-[#121212]/50 hover:text-[#121212]/70 tracking-[-0.08px] leading-[140%] no-underline transition-colors"
+      }
+    >
+      {label}
+    </Link>
+  );
+}
 
 function LinkGroup({
   links,
@@ -34,9 +61,7 @@ function LinkGroup({
   return (
     <>
       {links.map((link) => (
-        <Link key={link.href} href={link.href} className={linkClass} onClick={onNavigate}>
-          {link.label}
-        </Link>
+        <NavLink key={link.href} href={link.href} label={link.label} onNavigate={onNavigate} />
       ))}
     </>
   );
@@ -47,27 +72,27 @@ export default function Nav({ variant }: { variant: "desktop" | "mobile" }) {
 
   if (variant === "desktop") {
     return (
-      <aside className="flex flex-col h-screen sticky top-0 px-6 py-8">
-        <Link href="/" className="text-[#E5484D] font-semibold text-[17px] no-underline mb-8">
-          overlookly
+      <aside className="flex flex-col h-screen sticky top-0">
+        <Link href="/" className="mb-8 inline-block">
+          <Image src="/logo.svg" alt="overlookly" width={71} height={16} />
         </Link>
-        <nav className="flex flex-col gap-2.5">
+        <nav className="flex flex-col gap-3">
           <LinkGroup links={TOP_LINKS} />
           <p className={groupLabelClass}>Tools</p>
           <LinkGroup links={TOOLS_LINKS} />
           <p className={groupLabelClass}>Resources</p>
           <LinkGroup links={RESOURCES_LINKS} />
         </nav>
-        <div className="mt-auto pt-6 text-[12px] text-[#a8a69d]">v0.1</div>
+        <div className="mt-auto pt-6 text-[10px] text-[#121212]/30">v0.1</div>
       </aside>
     );
   }
 
   return (
     <div className="border-b border-[#e4e2da]">
-      <div className="flex items-center justify-between px-5 py-4">
-        <Link href="/" className="text-[#E5484D] font-semibold text-[15px] no-underline">
-          overlookly
+      <div className="flex items-center justify-between p-3">
+        <Link href="/">
+          <Image src="/logo.svg" alt="overlookly" width={71} height={16} />
         </Link>
         <button
           aria-label={open ? "Close menu" : "Open menu"}
@@ -77,16 +102,17 @@ export default function Nav({ variant }: { variant: "desktop" | "mobile" }) {
         >
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
             {open ? (
-              <path d="M5 5L15 15M15 5L5 15" stroke="#1a1a18" strokeWidth="1.5" strokeLinecap="round" />
+              <path d="M5 5L15 15M15 5L5 15" stroke="#121212" strokeWidth="1.5" strokeLinecap="round" />
             ) : (
-              <path d="M3 6H17M3 10H17M3 14H17" stroke="#1a1a18" strokeWidth="1.5" strokeLinecap="round" />
+              // Two lines only, per spec (not the standard three-line hamburger)
+              <path d="M3 7H17M3 13H17" stroke="#121212" strokeWidth="1.5" strokeLinecap="round" />
             )}
           </svg>
         </button>
       </div>
 
       {open && (
-        <nav className="flex flex-col gap-4 px-5 pb-5">
+        <nav className="flex flex-col gap-4 p-3 pt-0">
           <LinkGroup links={TOP_LINKS} onNavigate={() => setOpen(false)} />
           <p className={groupLabelClass}>Tools</p>
           <LinkGroup links={TOOLS_LINKS} onNavigate={() => setOpen(false)} />

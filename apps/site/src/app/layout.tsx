@@ -22,25 +22,51 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${inter.variable} antialiased`}>
-      <body className="min-h-screen">
-        {/* Mobile top bar — full width, standard pattern */}
+      <body className="min-h-screen flex flex-col">
+        <div className="md:hidden flex items-center gap-2 bg-[#f7f6f2] px-4 py-2.5 text-[12px] text-[#121212]/70">
+          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+            <rect x="1.5" y="2.5" width="13" height="8.5" rx="1" stroke="currentColor" strokeWidth="1.2" />
+            <path d="M5.5 14H10.5M8 11V14" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
+          </svg>
+          overlookly is currently desktop only.
+        </div>
+
         <div className="md:hidden">
           <Nav variant="mobile" />
         </div>
 
         {/*
-          Desktop: the whole sidebar+content block is centered together
-          as one unit on the page, with margin on both far edges of the
-          viewport — the sidebar is NOT pinned to the browser's left edge.
+          Single shared 60px padding around BOTH the sidebar and the
+          content together, so their top edges align exactly — instead
+          of each having its own separate padding like before.
         */}
-        <div className="md:flex md:justify-center">
-          <div className="md:flex md:max-w-[1040px] md:w-full">
+        <div className="flex-1 md:flex md:justify-center">
+          <div className="md:flex md:max-w-[1040px] md:w-full md:p-[60px] md:gap-x-10">
             <div className="hidden md:block md:w-56 md:shrink-0">
               <Nav variant="desktop" />
             </div>
-            <main className="flex-1 min-w-0 px-5 md:px-10">{children}</main>
+            <main className="flex-1 min-w-0 px-5 py-10 md:px-0 md:py-0">{children}</main>
           </div>
         </div>
+
+        <footer className="text-[12px] text-[#121212]/50 tracking-[-0.08px] leading-[140%] px-5 md:px-[60px] pb-8">
+          <a
+            href="https://www.sicarlos.co/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-[#121212]/50 hover:text-[#121212]/70 no-underline transition-colors"
+          >
+            Made by Carlos
+          </a>
+          {" · "}
+          <a
+            href="/colophon"
+            className="text-[#121212]/50 hover:text-[#121212]/70 no-underline transition-colors"
+          >
+            Colophon
+          </a>
+        </footer>
+
         <OverlookMount />
       </body>
     </html>
