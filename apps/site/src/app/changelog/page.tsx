@@ -14,12 +14,6 @@ export default function ChangelogPage() {
         <li className="mb-1.5">MCP server for direct agent access to findings</li>
         <li className="mb-1.5">Claude Code setup skill</li>
       </ul>
-
-      <h2 className="text-lg font-semibold mt-8 mb-2.5 text-[#1a1a18]">Planned</h2>
-      <ul className="pl-5 text-[#3a3a36] list-disc">
-        <li className="mb-1.5">Source-file-path lookup, so findings link straight to the line in your codebase</li>
-        <li className="mb-1.5">Focus-order and color-contrast-on-gradient checks</li>
-      </ul>
     </div>
   );
 }
