@@ -1,3 +1,5 @@
+import SectionHeading from "@/components/SectionHeading";
+
 export default function ChangelogPage() {
   return (
     <div>
@@ -5,7 +7,7 @@ export default function ChangelogPage() {
         Changelog
       </h1>
 
-      <h2 className="text-h2 mt-10 mb-3 border-t border-[#eee] pt-6">v0.1.0</h2>
+      <SectionHeading>v0.1.0</SectionHeading>
       <ul className="pl-5 text-body list-disc">
         <li className="mb-1.5">Initial release</li>
         <li className="mb-1.5">Six checks: color contrast, alt text, form labels, ARIA roles, keyboard focus, heading hierarchy</li>
@@ -15,7 +17,7 @@ export default function ChangelogPage() {
         <li className="mb-1.5">Claude Code setup skill</li>
       </ul>
 
-      <h2 className="text-h2 mt-10 mb-3 border-t border-[#eee] pt-6">Planned</h2>
+      <SectionHeading>Planned</SectionHeading>
       <ul className="pl-5 text-body list-disc">
         <li className="mb-1.5">Source-file-path lookup, so findings link straight to the line in your codebase</li>
         <li className="mb-1.5">Focus-order and color-contrast-on-gradient checks</li>

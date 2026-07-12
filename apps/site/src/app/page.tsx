@@ -1,23 +1,25 @@
 import InstallCommand from "@/components/InstallCommand";
+import SectionHeading from "@/components/SectionHeading";
+import ArrowLink from "@/components/ArrowLink";
 
 export default function OverviewPage() {
   return (
     <div>
-      <div className="flex items-end justify-between gap-6 flex-wrap">
-        <h1 className="text-h1 max-w-[420px] mb-3.5">
+      <div className="flex items-end justify-between gap-6">
+        <h1 className="text-h1 max-w-[420px]">
           Accessibility feedback, structured for agents.
         </h1>
         <InstallCommand command="npm install overlookly-a11y" />
       </div>
 
-      <p className="text-body mb-3.5">
+      <p className="text-body mt-3.5 mb-3.5">
         overlookly turns UI elements into structured accessibility findings
         that AI coding agents can understand and act on. Click any element,
         run the check, and paste the output into Claude Code, Codex, or any
         AI tool.
       </p>
 
-      <h2 className="text-h2 mt-10 mb-3 border-t border-[#eee] pt-6">Try out</h2>
+      <SectionHeading>Try out</SectionHeading>
       <div className="bg-[#f7f6f2] rounded-lg p-5">
         <div className="bg-white border border-[#eee] rounded-lg p-5 flex flex-col gap-4">
           <p className="text-caption m-0">
@@ -50,17 +52,33 @@ export default function OverviewPage() {
         </div>
       </div>
 
-      <h2 className="text-h2 mt-10 mb-3 border-t border-[#eee] pt-6">Features</h2>
-      <ul className="pl-5 text-body list-disc">
-        <li className="mb-1.5">Click the icon in the bottom-right corner to activate</li>
-        <li className="mb-1.5">Hover over elements to see what&apos;s checkable</li>
-        <li className="mb-1.5">Click any element to run the check</li>
-        <li className="mb-1.5">Get the issue, the WCAG criterion, and a suggested fix</li>
-        <li className="mb-1.5">Click to copy formatted markdown</li>
-        <li className="mb-1.5">Paste into your agent</li>
-      </ul>
+      <SectionHeading>How you use it</SectionHeading>
+      <ol className="pl-5 text-body list-decimal marker:text-[#121212]/40">
+        <li className="mb-2 flex items-start gap-1.5">
+          <span>
+            Click the{" "}
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="inline align-[-2px]">
+              <path d="M2 4H12M2 7H9M2 10H6" stroke="#121212" strokeWidth="1.2" strokeLinecap="round" />
+              <circle cx="10" cy="4" r="1.5" fill="#121212" />
+            </svg>{" "}
+            icon in the bottom-right corner to activate
+          </span>
+        </li>
+        <li className="mb-2"><strong>Hover</strong> over elements to see what&apos;s checkable</li>
+        <li className="mb-2"><strong>Click</strong> any element to run the check</li>
+        <li className="mb-2">Get the issue, the WCAG criterion, and a suggested fix</li>
+        <li className="mb-2">
+          Click{" "}
+          <svg width="13" height="13" viewBox="0 0 14 14" fill="none" className="inline align-[-2px]">
+            <rect x="4.5" y="4.5" width="8" height="8" rx="1.5" stroke="#121212" strokeWidth="1.2" />
+            <path d="M1.5 9.5V2.5C1.5 1.94772 1.94772 1.5 2.5 1.5H9.5" stroke="#121212" strokeWidth="1.2" />
+          </svg>{" "}
+          to copy formatted markdown
+        </li>
+        <li className="mb-2">Paste into your agent</li>
+      </ol>
 
-      <h2 className="text-h2 mt-10 mb-3 border-t border-[#eee] pt-6">How agents use it</h2>
+      <SectionHeading>How agents use it</SectionHeading>
       <p className="text-body mb-2">
         overlookly works best with tools that have access to your codebase
         (Claude Code, Cursor, etc). When you send findings, agents get:
@@ -77,7 +95,7 @@ export default function OverviewPage() {
         <a href="/changelog">Changelog</a>.
       </p>
 
-      <h2 className="text-h2 mt-10 mb-3 border-t border-[#eee] pt-6">Agents talk back</h2>
+      <SectionHeading>Agents talk back</SectionHeading>
       <p className="text-body mb-2">
         With <a href="/mcp">MCP</a> running, agents don&apos;t just read
         findings — they respond to them:
@@ -89,16 +107,16 @@ export default function OverviewPage() {
         <li className="mb-1.5">&quot;Clear everything already resolved&quot; — dismiss in bulk</li>
       </ul>
 
-      <h2 className="text-h2 mt-10 mb-3 border-t border-[#eee] pt-6">Licensing</h2>
+      <SectionHeading>Licensing</SectionHeading>
       <p className="text-body mb-3.5">
         MIT licensed. Free to use, modify, and redistribute — no restrictions,
         no commercial tier.
       </p>
 
-      <div className="mt-10 pt-6 border-t border-[#eee] flex flex-col gap-1.5">
-        <a href="/mcp" className="text-body">Set up real-time sync with MCP →</a>
-        <a href="/claude-skill" className="text-body">Install the Claude Code skill →</a>
-        <a href="/schema" className="text-body">See the full finding schema →</a>
+      <div className="mt-10 pt-6 border-t border-[#eee] flex flex-col gap-2">
+        <ArrowLink href="/mcp">Set up real-time sync with MCP</ArrowLink>
+        <ArrowLink href="/claude-skill">Install the Claude Code skill</ArrowLink>
+        <ArrowLink href="/schema">See the full finding schema</ArrowLink>
       </div>
     </div>
   );

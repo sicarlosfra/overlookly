@@ -1,3 +1,5 @@
+import SectionHeading from "@/components/SectionHeading";
+
 export default function InstallPage() {
   return (
     <div>
@@ -20,7 +22,7 @@ overlookly();`}
         your app entry point. It mounts a small toggle bottom-right.
       </p>
 
-      <h2 className="text-h2 mt-10 mb-3 border-t border-[#eee] pt-6">Options</h2>
+      <SectionHeading>Options</SectionHeading>
       <pre className="bg-[#f7f6f2] rounded-md px-4 py-3.5 text-[13px] overflow-x-auto whitespace-pre-wrap">
 {`overlookly({
   endpoint: 'http://localhost:4478/findings',
@@ -42,13 +44,13 @@ overlookly();`}
         </tbody>
       </table>
 
-      <h2 className="text-h2 mt-10 mb-3 border-t border-[#eee] pt-6">Framework support</h2>
+      <SectionHeading>Framework support</SectionHeading>
       <p className="text-body mb-3.5">
         Works with React, Vue, and plain HTML — it&apos;s a vanilla script that
         mounts itself, no framework-specific wiring required.
       </p>
 
-      <h2 className="text-h2 mt-10 mb-3 border-t border-[#eee] pt-6">Next steps</h2>
+      <SectionHeading>Next steps</SectionHeading>
       <p className="text-body">
         Want your agent to read findings directly instead of copy-paste? See{" "}
         <a href="/mcp">MCP</a>. Using Claude Code? See{" "}

@@ -1,3 +1,5 @@
+import SectionHeading from "@/components/SectionHeading";
+
 export default function ClaudeSkillPage() {
   return (
     <div>
@@ -20,7 +22,7 @@ export default function ClaudeSkillPage() {
         overlookly in a project.
       </p>
 
-      <h2 className="text-h2 mt-10 mb-3 border-t border-[#eee] pt-6">What it does</h2>
+      <SectionHeading>What it does</SectionHeading>
       <ul className="pl-5 text-body list-disc">
         <li className="mb-1.5">Checks package.json to detect React, Vue, or plain HTML</li>
         <li className="mb-1.5">Runs the install command</li>
@@ -29,7 +31,7 @@ export default function ClaudeSkillPage() {
         <li className="mb-1.5">Asks whether you want the MCP server set up too</li>
       </ul>
 
-      <h2 className="text-h2 mt-10 mb-3 border-t border-[#eee] pt-6">Not built yet</h2>
+      <SectionHeading>Not built yet</SectionHeading>
       <p className="text-body">
         A one-line install via a community skills CLI (the way some tools
         distribute skills straight from a GitHub repo) isn&apos;t set up for this

@@ -1,3 +1,5 @@
+import SectionHeading from "@/components/SectionHeading";
+
 export default function McpPage() {
   return (
     <div>
@@ -31,7 +33,7 @@ export default function McpPage() {
         exact command.
       </p>
 
-      <h2 className="text-h2 mt-10 mb-3 border-t border-[#eee] pt-6">Tools exposed</h2>
+      <SectionHeading>Tools exposed</SectionHeading>
       <table className="w-full text-[13px] border-collapse mt-3">
         <tbody>
           <tr className="border-b border-[#eee]">
@@ -49,7 +51,7 @@ export default function McpPage() {
         </tbody>
       </table>
 
-      <h2 className="text-h2 mt-10 mb-3 border-t border-[#eee] pt-6">Security</h2>
+      <SectionHeading>Security</SectionHeading>
       <ul className="pl-5 text-body list-disc">
         <li className="mb-1.5">No external requests — everything stays on localhost</li>
         <li className="mb-1.5">The HTTP bridge only accepts connections from your own machine</li>

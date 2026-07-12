@@ -1,3 +1,5 @@
+import SectionHeading from "@/components/SectionHeading";
+
 export default function SchemaPage() {
   return (
     <div>
@@ -20,7 +22,7 @@ export default function SchemaPage() {
 }`}
       </pre>
 
-      <h2 className="text-h2 mt-10 mb-3 border-t border-[#eee] pt-6">Fields</h2>
+      <SectionHeading>Fields</SectionHeading>
       <table className="w-full text-[13px] border-collapse mt-3">
         <tbody>
           <tr className="border-b border-[#eee]"><td className="py-1.5 pr-4 text-[#121212]/50 align-top w-32">selector</td><td className="py-1.5">CSS selector for the flagged element</td></tr>
