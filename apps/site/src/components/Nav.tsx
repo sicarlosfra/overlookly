@@ -72,7 +72,13 @@ export default function Nav({ variant }: { variant: "desktop" | "mobile" }) {
 
   if (variant === "desktop") {
     return (
-      <aside className="flex flex-col h-screen sticky top-0">
+      <aside
+        className="hidden md:flex md:flex-col md:fixed md:top-[60px] md:w-28"
+        style={{
+          left: "max(60px, calc(50vw - 460px))",
+          height: "calc(100vh - 60px)",
+        }}
+      >
         <Link href="/" className="mb-8 inline-block">
           <Image src="/logo.svg" alt="overlookly" width={71} height={16} />
         </Link>

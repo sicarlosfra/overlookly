@@ -42,30 +42,31 @@ export default function RootLayout({
         */}
         <div className="flex-1 md:flex md:justify-center">
           <div className="md:flex md:max-w-[1040px] md:w-full md:p-[60px] md:gap-x-10">
-            <div className="hidden md:block md:w-56 md:shrink-0">
+            <div className="hidden md:block md:w-28 md:shrink-0">
               <Nav variant="desktop" />
             </div>
-            <main className="flex-1 min-w-0 px-5 py-10 md:px-0 md:py-0">{children}</main>
+            <div className="flex-1 min-w-0 flex flex-col">
+              <main className="px-5 py-10 md:px-0 md:py-0 md:max-w-[640px]">{children}</main>
+              <footer className="text-[12px] text-[#121212]/50 tracking-[-0.08px] leading-[140%] px-5 md:px-0 pb-8 pt-10 mt-auto">
+                <a
+                  href="https://www.sicarlos.co/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[#121212]/50 hover:text-[#121212]/70 no-underline transition-colors"
+                >
+                  Made by Carlos
+                </a>
+                {" · "}
+                <a
+                  href="/colophon"
+                  className="text-[#121212]/50 hover:text-[#121212]/70 no-underline transition-colors"
+                >
+                  Colophon
+                </a>
+              </footer>
+            </div>
           </div>
         </div>
-
-        <footer className="text-[12px] text-[#121212]/50 tracking-[-0.08px] leading-[140%] px-5 md:px-[60px] pb-8">
-          <a
-            href="https://www.sicarlos.co/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-[#121212]/50 hover:text-[#121212]/70 no-underline transition-colors"
-          >
-            Made by Carlos
-          </a>
-          {" · "}
-          <a
-            href="/colophon"
-            className="text-[#121212]/50 hover:text-[#121212]/70 no-underline transition-colors"
-          >
-            Colophon
-          </a>
-        </footer>
 
         <OverlookMount />
       </body>

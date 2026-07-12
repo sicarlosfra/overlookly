@@ -14,7 +14,7 @@ export default function InstallCommand({ command }: { command: string }) {
   return (
     <button
       onClick={onClick}
-      className="inline-flex items-center gap-2 rounded-lg px-3 py-1.5 text-[13px] font-mono text-[#121212] hover:bg-[#1212120D] transition-colors"
+      className="inline-flex items-center gap-2 rounded-lg px-3 py-1.5 text-[13px] font-mono text-[#121212] whitespace-nowrap hover:bg-[#1212120D] transition-colors"
     >
       {copied ? "Copied" : command}
       <svg width="14" height="14" viewBox="0 0 14 14" fill="none">

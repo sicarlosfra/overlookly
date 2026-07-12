@@ -6,7 +6,7 @@ export default function OverviewPage() {
   return (
     <div>
       <div className="flex items-end justify-between gap-6">
-        <h1 className="text-h1 max-w-[420px]">
+        <h1 className="text-h1 flex-1">
           Accessibility feedback, structured for agents.
         </h1>
         <InstallCommand command="npm install overlookly-a11y" />
@@ -54,8 +54,8 @@ export default function OverviewPage() {
 
       <SectionHeading>How you use it</SectionHeading>
       <ol className="pl-5 text-body list-decimal marker:text-[#121212]/40">
-        <li className="mb-2 flex items-start gap-1.5">
-          <span>
+        <li className="mb-2">
+          <span className="inline-flex items-start gap-1.5">
             Click the{" "}
             <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="inline align-[-2px]">
               <path d="M2 4H12M2 7H9M2 10H6" stroke="#121212" strokeWidth="1.2" strokeLinecap="round" />

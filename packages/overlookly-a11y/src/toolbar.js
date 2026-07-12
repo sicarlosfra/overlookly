@@ -4,19 +4,20 @@ import { runChecks } from './checks.js';
 const STYLE = `
   .ovlk-toggle {
     position: fixed; bottom: 20px; right: 20px; z-index: 999999;
-    width: 44px; height: 44px; border-radius: 4px; border: 1.5px solid transparent;
-    background: #1a1a18; color: #fff; cursor: pointer;
+    width: 44px; height: 44px; border-radius: 50%; border: none;
+    background: #121212; color: #fff; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
     font-family: -apple-system, sans-serif; font-size: 18px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.25);
     transition: background 0.15s ease;
   }
-  .ovlk-toggle:hover { background: #E5484D33; border-color: #E5484D; }
+  .ovlk-toggle:hover { background: #A03236; }
   .ovlk-toggle.ovlk-active { background: #E5484D; }
   .ovlk-highlight {
     outline: 2px solid #E5484D !important;
     outline-offset: 2px !important;
     border-radius: 6px !important;
+    background-color: #E5484D0D !important;
     cursor: crosshair !important;
   }
   .ovlk-panel {
