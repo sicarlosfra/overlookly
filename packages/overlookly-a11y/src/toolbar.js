@@ -4,7 +4,7 @@ import { runChecks } from './checks.js';
 const STYLE = `
   .ovlk-toggle {
     position: fixed; bottom: 20px; right: 20px; z-index: 999999;
-    width: 44px; height: 44px; border-radius: 8px; border: none;
+    width: 44px; height: 44px; border-radius: 50%; border: none;
     background: #1a1a18; color: #fff; cursor: pointer;
     display: flex; align-items: center; justify-content: center;
     font-family: -apple-system, sans-serif; font-size: 18px;
