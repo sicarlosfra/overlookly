@@ -6,7 +6,7 @@ export default function OverviewPage() {
   return (
     <div>
       <div className="flex items-end justify-between gap-6">
-        <h1 className="text-h1 flex-1">
+        <h1 className="text-h1 max-w-[480px]">
           Accessibility feedback, structured for agents.
         </h1>
         <InstallCommand command="npm install overlookly-a11y" />

@@ -89,7 +89,7 @@ export default function Nav({ variant }: { variant: "desktop" | "mobile" }) {
           <p className={groupLabelClass}>Resources</p>
           <LinkGroup links={RESOURCES_LINKS} />
         </nav>
-        <div className="mt-auto pt-6 text-[10px] text-[#121212]/30">v0.1</div>
+        <div className="mt-20 text-[10px] text-[#121212]/30">v0.1</div>
       </aside>
     );
   }

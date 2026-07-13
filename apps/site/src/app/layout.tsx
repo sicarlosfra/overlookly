@@ -35,11 +35,6 @@ export default function RootLayout({
           <Nav variant="mobile" />
         </div>
 
-        {/*
-          Single shared 60px padding around BOTH the sidebar and the
-          content together, so their top edges align exactly — instead
-          of each having its own separate padding like before.
-        */}
         <div className="flex-1 md:flex md:justify-center">
           <div className="md:flex md:max-w-[1040px] md:w-full md:p-[60px] md:gap-x-10">
             <div className="hidden md:block md:w-28 md:shrink-0">

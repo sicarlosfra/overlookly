@@ -1,14 +1,58 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
+/* ---- shadcn/ui theme tokens, mapped to overlookly's actual brand ---- */
 :root {
   --background: #ffffff;
   --foreground: #121212;
+  --primary: #E5484D;
+  --primary-foreground: #ffffff;
+  --secondary: #f7f6f2;
+  --secondary-foreground: #121212;
+  --muted: #f7f6f2;
+  --muted-foreground: rgba(18, 18, 18, 0.5);
+  --accent: rgba(229, 72, 77, 0.1);
+  --accent-foreground: #121212;
+  --destructive: #E5484D;
+  --destructive-foreground: #ffffff;
+  --border: #eeeeee;
+  --input: #eeeeee;
+  --ring: #E5484D;
+  --radius: 0.5rem;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
   --font-sans: var(--font-inter);
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+}
+
+@keyframes accordion-down {
+  from { height: 0; }
+  to { height: var(--radix-accordion-content-height); }
+}
+@keyframes accordion-up {
+  from { height: var(--radix-accordion-content-height); }
+  to { height: 0; }
 }
 
 body {
@@ -21,7 +65,8 @@ pre, code {
   font-family: ui-monospace, "SF Mono", monospace;
 }
 
-/* ---- Typography system ---- */
+/* ---- Typography system (unchanged — this is overlookly-specific,
+   not part of shadcn's conventions) ---- */
 
 .text-h1 {
   font-size: 32px;
@@ -53,7 +98,6 @@ pre, code {
   line-height: 140%;
 }
 
-/* Links inside body text (not nav — nav has its own color logic) */
 main a {
   color: #2480ED;
   text-decoration: none;
@@ -62,6 +106,3 @@ main a {
 main a:hover {
   color: rgba(36, 128, 237, 0.5);
 }
-
-/* Footer links (Made by Carlos / Colophon) use caption styling, not the
-   blue content-link color — scoped separately below in the footer itself. */
