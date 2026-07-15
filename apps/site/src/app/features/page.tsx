@@ -1,4 +1,6 @@
 import SectionHeading from "@/components/SectionHeading";
+import { Copy } from "lucide-react";
+import LogoIcon from "@/components/LogoIcon";
 
 export default function FeaturesPage() {
   return (
@@ -7,14 +9,11 @@ export default function FeaturesPage() {
         Features
       </h1>
 
-      <SectionHeading>How you use it</SectionHeading>
+      <SectionHeading id="how-you-use-it">How you use it</SectionHeading>
       <ol className="pl-5 text-body list-decimal marker:text-[#121212]/40">
         <li className="mb-2">
           Click the{" "}
-          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="inline align-[-2px]">
-            <path d="M2 4H12M2 7H9M2 10H6" stroke="#121212" strokeWidth="1.2" strokeLinecap="round" />
-            <circle cx="10" cy="4" r="1.5" fill="#121212" />
-          </svg>{" "}
+          <LogoIcon className="inline size-3.5 align-middle" />{" "}
           icon in the bottom-right corner to activate
         </li>
         <li className="mb-2"><strong>Hover</strong> over elements to see what&apos;s checkable</li>
@@ -22,10 +21,7 @@ export default function FeaturesPage() {
         <li className="mb-2">Get the issue, the WCAG criterion, and a suggested fix</li>
         <li className="mb-2">
           Click{" "}
-          <svg width="13" height="13" viewBox="0 0 14 14" fill="none" className="inline align-[-2px]">
-            <rect x="4.5" y="4.5" width="8" height="8" rx="1.5" stroke="#121212" strokeWidth="1.2" />
-            <path d="M1.5 9.5V2.5C1.5 1.94772 1.94772 1.5 2.5 1.5H9.5" stroke="#121212" strokeWidth="1.2" />
-          </svg>{" "}
+          <Copy className="inline size-3.5 align-middle" />{" "}
           to copy formatted markdown
         </li>
         <li className="mb-2">Paste into your agent</li>
@@ -36,7 +32,7 @@ export default function FeaturesPage() {
         &quot;fix the contrast issues&quot; or &quot;resolve finding 3.&quot;
       </p>
 
-      <SectionHeading>How agents use it</SectionHeading>
+      <SectionHeading id="how-agents-use-it">How agents use it</SectionHeading>
       <p className="text-body mb-2">
         overlookly works best with tools that have access to your codebase
         (Claude Code, Cursor, etc). When you send findings, agents get:
@@ -54,7 +50,7 @@ export default function FeaturesPage() {
         <a href="/changelog">Changelog</a>.
       </p>
 
-      <SectionHeading>Best practices</SectionHeading>
+      <SectionHeading id="best-practices">Best practices</SectionHeading>
       <ul className="pl-5 text-body list-disc">
         <li className="mb-1.5">Check while you build, not after — the earlier the cheaper the fix</li>
         <li className="mb-1.5">One issue per finding — easier for the agent to address individually</li>

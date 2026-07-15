@@ -1,6 +1,41 @@
 import InstallCommand from "@/components/InstallCommand";
 import SectionHeading from "@/components/SectionHeading";
 import ArrowLink from "@/components/ArrowLink";
+import TryOutCarousel from "@/components/TryOutCarousel";
+import { Copy } from "lucide-react";
+import LogoIcon from "@/components/LogoIcon";
+
+const tryOutItems = [
+  {
+    label: "Low-contrast text",
+    content: (
+      <p className="text-[#999] text-[15px] max-w-[280px] text-center">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+      </p>
+    ),
+  },
+  {
+    label: "Unlabeled input",
+    content: (
+      <input
+        type="email"
+        placeholder="you@example.com"
+        className="border border-[#00000014] rounded-[14px] px-5 py-3.5 text-[14px] w-full max-w-[240px] outline-none focus:ring-[4px] focus:ring-[#0000000A]"
+      />
+    ),
+  },
+  {
+    label: "Invalid ARIA role",
+    content: (
+      <div
+        role="buton"
+        className="inline-block bg-[#121212] text-white px-5 py-3.5 rounded-[14px] text-[15px] cursor-pointer transition-all hover:ring-[4px] hover:ring-[#0000000A] active:scale-95"
+      >
+        Submit
+      </div>
+    ),
+  },
+];
 
 export default function OverviewPage() {
   return (
@@ -20,47 +55,14 @@ export default function OverviewPage() {
       </p>
 
       <SectionHeading>Try out</SectionHeading>
-      <div className="bg-[#f7f6f2] rounded-lg p-5">
-        <div className="bg-white border border-[#eee] rounded-lg p-5 flex flex-col gap-4">
-          <p className="text-caption m-0">
-            The toggle bottom-right is already active. Click each broken
-            element below.
-          </p>
-
-          <div>
-            <p className="text-caption mb-1.5">Low-contrast button</p>
-            <button className="bg-white text-[#999] border-none px-4 py-2.5 rounded-md text-[15px]">
-              Get started
-            </button>
-          </div>
-
-          <div>
-            <p className="text-caption mb-1.5">Unlabeled input</p>
-            <input
-              type="email"
-              placeholder="you@example.com"
-              className="border border-[#ddd] rounded-md px-3 py-2 text-[14px] w-full max-w-[240px]"
-            />
-          </div>
-
-          <div>
-            <p className="text-caption mb-1.5">Invalid ARIA role</p>
-            <div role="buton" className="inline-block bg-[#121212] text-white px-4 py-2.5 rounded-md text-[15px] cursor-pointer">
-              Submit
-            </div>
-          </div>
-        </div>
-      </div>
+      <TryOutCarousel items={tryOutItems} />
 
       <SectionHeading>How you use it</SectionHeading>
       <ol className="pl-5 text-body list-decimal marker:text-[#121212]/40">
         <li className="mb-2">
           <span className="inline-flex items-start gap-1.5">
             Click the{" "}
-            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" className="inline align-[-2px]">
-              <path d="M2 4H12M2 7H9M2 10H6" stroke="#121212" strokeWidth="1.2" strokeLinecap="round" />
-              <circle cx="10" cy="4" r="1.5" fill="#121212" />
-            </svg>{" "}
+            <LogoIcon className="inline size-3.5 align-middle" />{" "}
             icon in the bottom-right corner to activate
           </span>
         </li>
@@ -69,10 +71,7 @@ export default function OverviewPage() {
         <li className="mb-2">Get the issue, the WCAG criterion, and a suggested fix</li>
         <li className="mb-2">
           Click{" "}
-          <svg width="13" height="13" viewBox="0 0 14 14" fill="none" className="inline align-[-2px]">
-            <rect x="4.5" y="4.5" width="8" height="8" rx="1.5" stroke="#121212" strokeWidth="1.2" />
-            <path d="M1.5 9.5V2.5C1.5 1.94772 1.94772 1.5 2.5 1.5H9.5" stroke="#121212" strokeWidth="1.2" />
-          </svg>{" "}
+          <Copy className="inline size-3.5 align-middle" />{" "}
           to copy formatted markdown
         </li>
         <li className="mb-2">Paste into your agent</li>

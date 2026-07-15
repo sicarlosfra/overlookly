@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { Monitor } from "lucide-react";
 import "./globals.css";
 import Nav from "@/components/Nav";
 import OverlookMount from "@/components/OverlookMount";
@@ -24,10 +25,7 @@ export default function RootLayout({
     <html lang="en" className={`${inter.variable} antialiased`}>
       <body className="min-h-screen flex flex-col">
         <div className="md:hidden flex items-center gap-2 bg-[#f7f6f2] px-4 py-2.5 text-[12px] text-[#121212]/70">
-          <svg width="14" height="14" viewBox="0 0 16 16" fill="none" aria-hidden="true">
-            <rect x="1.5" y="2.5" width="13" height="8.5" rx="1" stroke="currentColor" strokeWidth="1.2" />
-            <path d="M5.5 14H10.5M8 11V14" stroke="currentColor" strokeWidth="1.2" strokeLinecap="round" />
-          </svg>
+          <Monitor className="size-3.5" />
           overlookly is currently desktop only.
         </div>
 
